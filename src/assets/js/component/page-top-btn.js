@@ -1,0 +1,4 @@
+/*
+ ページトップボタン
+*/
+export const initPageTopBtn = () => {};

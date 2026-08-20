@@ -1,0 +1,4 @@
+/*
+ ドロワーメニュー
+*/
+export const initDrawer = () => {};
