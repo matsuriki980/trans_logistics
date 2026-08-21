@@ -1,0 +1,4 @@
+/*
+ ヘッダーメニュー
+*/
+export const initHeaderMenu = () => {};

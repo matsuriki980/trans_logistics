@@ -17,6 +17,7 @@
   display: block;
   max-width: 100%;
   height: auto;
+  width: 100%;
 }
 
 /* iframe */
@@ -35,6 +36,16 @@
   font: inherit;
   color: inherit;
   text-transform: none;
+}
+
+/* ボタン要素のタイポグラフィをリセット */
+:where(button) {
+  background: none;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
 }
 
 /* テキストエリアの水平リサイズを無効に */
@@ -63,7 +74,11 @@
 	共通デザイントークン
 -------------------------------------- */
 :root {
+  /* font */
   --font-size-base: clamp(0.875rem, 0.613rem + 0.41vw, 1.125rem);
+  --font-weight-bold: 600;
+
+  /* color */
   --color-font-base: #222;
   --color-font-sub: #fff;
   --color-primary: #3babc6;
@@ -75,11 +90,47 @@ body {
   font-family: "Noto Sans JP", sans-serif;
 
   /* 画面の幅が 1023px 以下の場合（スマホ・タブレットなど） */
-  @media (max-width: 768px) {
+  @media (max-width: 1023px) {
     font-size: clamp(0.875rem, 0.761rem + 0.57vw, 1.125rem);
   }
 }
 
 .font-en {
   font-family: "Oswald", sans-serif;
+}
+
+.pc-hidden {
+  /* 画面の幅が 1023px 以上の場合（スマホ・タブレットなど） */
+  @media (min-width: 900px) {
+    display: none;
+  }
+}
+
+.sp-hidden {
+  /* 画面の幅が 1023px 以下の場合（スマホ・タブレットなど） */
+  @media (max-width: 900px) {
+    display: none;
+  }
+}
+
+.l-wrapper {
+  padding-inline: clamp(1.25rem, 0.56rem + 3.45vw, 2.5rem);
+
+  @media (min-width: 900px) {
+    padding-inline: 0;
+  }
+}
+
+.u-pb {
+  padding-block: clamp(1.25rem, 0.56rem + 3.45vw, 2.5rem);
+}
+
+/* グラデーション背景 */
+.bg-gradation-primary {
+  background: #2aa4c2;
+  background: linear-gradient(
+    30deg,
+    rgba(42, 164, 194, 1) 0%,
+    rgba(19, 117, 186, 1) 80%
+  );
 }
