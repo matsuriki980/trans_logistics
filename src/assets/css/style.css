@@ -1,0 +1,264 @@
+/* ----------------------------------------------------------
+   header 
+---------------------------------------------------------- */
+.l-header {
+  @media (min-width: 900px) {
+    /* 作業効率向上のため設定 (作業中のみ指定) */
+    background: #56bcd5;
+  }
+}
+
+.l-header-inner {
+  @media (min-width: 900px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.l-header-var {
+  position: fixed;
+  height: clamp(4.375rem, 2.651rem + 8.62vw, 7.5rem);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: clamp(1.25rem, 0.56rem + 3.45vw, 2.5rem);
+
+  @media (min-width: 900px) {
+    position: static;
+    height: auto;
+    width: auto;
+    display: inline-block;
+  }
+}
+
+.l-header-logo {
+  width: clamp(10rem, 1.034rem + 44.83vw, 26.25rem);
+
+  @media (min-width: 900px) {
+    width: clamp(15rem, -0.738rem + 24.59vw, 30rem);
+  }
+}
+
+.l-header-menu-btn {
+  height: 100%;
+  aspect-ratio: 1/1;
+  position: relative;
+}
+
+.l-header-menu-btn span {
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(1.875rem, 0.703rem + 5.86vw, 4rem);
+  height: 1px;
+  background-color: var(--color-font-sub);
+}
+
+/* 1つ目の線 */
+.l-header-menu-btn span:nth-of-type(1) {
+  top: calc(50% - 15%);
+}
+
+/* 2つ目の線 */
+.l-header-menu-btn span:nth-of-type(2) {
+}
+
+/* 3つ目の線 */
+.l-header-menu-btn span:nth-of-type(3) {
+  top: calc(50% - -15%);
+}
+
+.l-header-nav {
+  padding-block: clamp(6.25rem, 3.491rem + 13.79vw, 11.25rem)
+    clamp(2.25rem, 1.284rem + 4.83vw, 4rem);
+  width: 100vw;
+  height: 100vh;
+  background: var(--color-sub);
+  color: var(--color-font-sub);
+  overflow: scroll;
+
+  @media (min-width: 900px) {
+    background: transparent;
+    padding-block: 0;
+    width: auto;
+    height: auto;
+    overflow: visible;
+  }
+}
+
+.l-header-list {
+  margin-bottom: clamp(2.5rem, 1.672rem + 4.14vw, 4rem);
+
+  @media (min-width: 900px) {
+    display: flex;
+    gap: clamp(2rem, -0.098rem + 3.28vw, 4rem);
+    margin-bottom: 0;
+    align-items: center;
+    height: clamp(5.5rem, 3.402rem + 3.28vw, 7.5rem);
+  }
+}
+
+.l-header-link {
+  width: 100%;
+  padding-block: clamp(1.25rem, 0.698rem + 2.76vw, 2.25rem);
+  border-bottom: 1px solid var(--color-font-sub);
+  font-size: clamp(0.875rem, 0.53rem + 1.72vw, 1.5rem);
+  font-weight: var(--font-weight-bold);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (min-width: 900px) {
+    display: block;
+    width: auto;
+    padding-inline: 0;
+    border-bottom: 0;
+    font-size: clamp(0.875rem, 0.35rem + 0.82vw, 1.375rem);
+    padding-block: 0;
+  }
+}
+
+/* ▶の装飾 */
+.l-header-link:not():after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: clamp(0.188rem, -0.019rem + 1.03vw, 0.563rem) 0
+    clamp(0.188rem, -0.019rem + 1.03vw, 0.563rem)
+    clamp(0.625rem, -0.065rem + 3.45vw, 1.875rem);
+  border-color: transparent transparent transparent var(--color-font-sub);
+
+  @media (min-width: 900px) {
+    display: none;
+  }
+}
+
+.l-header-item--contact {
+  @media (min-width: 900px) {
+    width: clamp(14rem, 11.377rem + 4.1vw, 16.5rem);
+    height: 100%;
+  }
+}
+
+.l-header-item--contact .l-header-link {
+  @media (min-width: 900px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    width: 100%;
+    height: 100%;
+    font-size: clamp(1rem, 0.475rem + 0.82vw, 1.5rem);
+  }
+}
+
+.l-header-item--contact .l-header-link::before {
+  /* アイコン */
+  content: "";
+  display: block;
+  width: clamp(1.375rem, 0.719rem + 1.02vw, 2rem);
+  aspect-ratio: 1/1;
+  background-image: url(../images/icon_mail.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.l-contact-cta {
+  background: var(--color-font-sub);
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.l-contact-tel {
+  margin-bottom: clamp(1.5rem, 1.224rem + 1.38vw, 2rem);
+  text-align: center;
+}
+
+.l-contact-tel-number {
+  font-size: clamp(1.5rem, 0.948rem + 2.76vw, 2.5rem);
+  font-weight: 600;
+  display: inline-flex;
+  color: var(--color-primary);
+  align-items: center;
+  gap: clamp(0.25rem, -0.026rem + 1.38vw, 0.75rem);
+}
+
+/* アイコン */
+.l-contact-tel-number::before {
+  content: "";
+  width: clamp(1.25rem, 0.56rem + 3.45vw, 2.5rem);
+  aspect-ratio: 1/1;
+  background-image: url(../images/icon_tel.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.l-contact-hours {
+  font-size: clamp(0.813rem, 0.571rem + 1.21vw, 1.25rem);
+  color: var(--color-font-base);
+}
+
+.l-contact-email {
+  background: #56bcd5;
+  background: linear-gradient(
+    90deg,
+    rgba(86, 188, 213, 1) 0%,
+    rgba(19, 117, 186, 1) 80%
+  );
+  padding-block: clamp(1rem, 0.724rem + 1.38vw, 1.5rem);
+  padding-inline: clamp(0.5rem, 0.224rem + 1.38vw, 1rem);
+  display: flex;
+  gap: clamp(0.5rem, 0.224rem + 1.38vw, 1rem);
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(1.125rem, 0.918rem + 1.03vw, 1.5rem);
+}
+
+/* アイコン */
+.l-contact-email-icon {
+  padding: clamp(0.5rem, 0.224rem + 1.38vw, 1rem);
+  background: var(--color-sub);
+  border-radius: 2px;
+}
+
+.l-contact-email-icon::before {
+  content: "";
+  display: block;
+  width: clamp(1.25rem, 0.56rem + 3.45vw, 2.5rem);
+  aspect-ratio: 1/1;
+  background-image: url(../images/icon_mail.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.l-header-nav .l-contact-cta {
+  margin-bottom: clamp(2.25rem, 1.284rem + 4.83vw, 4rem);
+}
+
+.l-header-sns {
+  display: flex;
+  gap: clamp(2.25rem, 1.284rem + 4.83vw, 4rem);
+  align-items: center;
+  justify-content: center;
+}
+
+.l-header-sns-item {
+  width: clamp(1.25rem, 0.56rem + 3.45vw, 2.5rem);
+  aspect-ratio: 1/1;
+  text-align: center;
+}
+
+.l-header-sns-item-link {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+}
