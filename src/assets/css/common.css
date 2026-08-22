@@ -83,6 +83,11 @@
   --color-font-sub: #fff;
   --color-primary: #3babc6;
   --color-sub: #0968aa;
+
+  /* z-index */
+  --z-index-header: 30;
+  --z-index-default: 1;
+  --z-index-negative: -1;
 }
 
 body {
@@ -95,18 +100,18 @@ body {
   }
 }
 
-.font-en {
+.u-font-en {
   font-family: "Oswald", sans-serif;
 }
 
-.pc-hidden {
+.u-pc-hidden {
   /* 画面の幅が 1023px 以上の場合（スマホ・タブレットなど） */
   @media (min-width: 900px) {
     display: none;
   }
 }
 
-.sp-hidden {
+.u-sp-hidden {
   /* 画面の幅が 1023px 以下の場合（スマホ・タブレットなど） */
   @media (max-width: 900px) {
     display: none;
@@ -123,10 +128,22 @@ body {
 
 .u-pb {
   padding-block: clamp(1.25rem, 0.56rem + 3.45vw, 2.5rem);
+
+  @media (min-width: 900px) {
+    padding-block: 0;
+  }
+}
+
+.u-pl {
+  padding-left: clamp(1.25rem, 0.56rem + 3.45vw, 2.5rem);
+
+  @media (min-width: 900px) {
+    padding-left: 0;
+  }
 }
 
 /* グラデーション背景 */
-.bg-gradation-primary {
+.u-bg-gradation-primary {
   background: #2aa4c2;
   background: linear-gradient(
     30deg,
@@ -134,3 +151,8 @@ body {
     rgba(19, 117, 186, 1) 80%
   );
 }
+
+/* テキスト 縦書き */
+    .u-vertical {
+        writing-mode: vertical-rl;
+    }
