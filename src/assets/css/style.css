@@ -2,6 +2,11 @@
    header 
 ---------------------------------------------------------- */
 .l-header {
+  @media (min-width: 900px) {
+    position: absolute;
+    width: 100%;
+    z-index: var(--z-index-header);
+  }
 }
 
 .l-header-inner {
@@ -26,6 +31,7 @@
     height: auto;
     width: auto;
     display: inline-block;
+    padding-left: clamp(5.5rem, 3.402rem + 3.28vw, 7.5rem);
   }
 }
 
@@ -107,14 +113,14 @@
     width: auto;
     padding-inline: 0px;
     border-bottom: 0px;
-    font-size: clamp(0.875rem, 0.35rem + 0.82vw, 1.375rem);
+    font-size: clamp(0.75rem, 0.226rem + 0.82vw, 1.25rem);
     padding-block: 0px;
   }
 }
 
 .l-header-item--contact {
   @media (min-width: 900px) {
-    width: clamp(14rem, 11.377rem + 4.1vw, 16.5rem);
+    width: clamp(11.25rem, 5.753rem + 8.6vw, 16.5rem);
     height: 100%;
   }
 }
@@ -127,19 +133,22 @@
     gap: 5%;
     width: 100%;
     height: 100%;
-    font-size: clamp(1rem, 0.475rem + 0.82vw, 1.5rem);
+    font-size: clamp(0.875rem, 0.351rem + 0.82vw, 1.375rem);
   }
 }
 
 .l-header-item--contact .l-header-link::before {
-  content: "";
-  display: block;
-  width: clamp(1.375rem, 0.719rem + 1.02vw, 2rem);
-  aspect-ratio: 1 / 1;
-  background-image: url("../images/icon_mail.png");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: contain;
+  @media (min-width: 900px) {
+    content: "";
+    display: block;
+    width: clamp(1rem, 0.476rem + 0.82vw, 1.5rem);
+    aspect-ratio: 1 / 1;
+    background-image: url("../images/icon_mail.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-top: 0.8%;
+  }
 }
 
 .l-header-nav .l-contact-cta {
