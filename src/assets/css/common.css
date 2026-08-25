@@ -92,6 +92,10 @@
 body {
   font-size: 4vw;
   font-family: "Noto Sans JP", sans-serif;
+
+  @media (min-width: 900px) {
+    font-size: clamp(12px, 1vw, 19px);
+  }
 }
 
 .u-font-en {
