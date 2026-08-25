@@ -186,8 +186,8 @@
   position: relative;
   z-index: var(--z-index-default);
   @media (min-width: 900px) {
-    height: 120vh;
     grid-template-columns: 93.75% 1fr;
+    height: auto;
   }
 }
 
@@ -200,16 +200,16 @@
   position: relative;
   @media (min-width: 900px) {
     background-image: url("../images/mv.jpg");
-    padding-left: clamp(5.5rem, 3.402rem + 3.28vw, 7.5rem);
+    padding-left: clamp(90px, 7.5vw, 144px);
   }
 }
 
 .p-top-fv__copy-wrapper {
-  width: calc(100% - clamp(5rem, 3.179rem + 9.1vw, 9rem));
+  width: 54vw;
   position: absolute;
-  bottom: clamp(1.875rem, 0.908rem + 4.84vw, 4rem);
+  bottom: 8.5vw;
   @media (min-width: 900px) {
-    bottom: clamp(6.25rem, 3.365rem + 4.51vw, 9rem);
+    bottom: clamp(98px, 8.125vw, 156px);
   }
 }
 
@@ -218,28 +218,32 @@
 }
 
 .p-top-fv__copy--ja {
-  font-size: clamp(1.875rem, 0.908rem + 4.84vw, 4rem);
-  margin-bottom: clamp(1.5rem, 1.045rem + 2.28vw, 2.5rem);
+  font-size: 7.5vw;
+  margin-bottom: 10vw;
+  line-height: 1.3333;
   @media (min-width: 900px) {
-    font-size: clamp(4rem, 0.328rem + 5.74vw, 7.5rem);
+    font-size: clamp(60px, 5vw, 96px);
     margin-bottom: clamp(2rem, 1.475rem + 0.82vw, 2.5rem);
   }
 }
 
 .p-top-fv__copy--en {
-  font-size: clamp(0.625rem, 0.341rem + 1.42vw, 1.25rem);
+  font-size: 2.5vw;
+  line-height: 1.8;
   @media (min-width: 900px) {
-    font-size: clamp(0.875rem, 0.613rem + 0.41vw, 1.125rem);
+    font-size: clamp(12px, 0.9375vw, 18px);
   }
 }
 
 .p-top-fv__sidebar {
+  padding-bottom: calc(31.25vw - -10vw);
+
   @media (min-width: 900px) {
-    padding-top: clamp(7.5rem, 3.566rem + 6.15vw, 11.25rem);
+    padding-block: calc(clamp(75px, 6.25vw, 120px) - -4.375vw) 12.5vw;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    gap: clamp(7.5rem, 4.877rem + 4.1vw, 10rem);
+    gap: 14vh;
   }
 }
 
@@ -248,7 +252,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: clamp(0.625rem, 0.494rem + 0.2vw, 0.75rem);
+    gap: 13px;
   }
 }
 
@@ -261,23 +265,32 @@
 .p-top-fv__sidebar-sns-border {
   @media (min-width: 900px) {
     width: 1px;
-    height: clamp(1.25rem, 0.988rem + 0.41vw, 1.5rem);
+    height: 20px;
     background: var(--color-font-base);
   }
 }
 
 .p-top-fv__sidebar-sns-list {
   @media (min-width: 900px) {
-    width: clamp(1.25rem, 0.988rem + 0.41vw, 1.5rem);
+    width: clamp(16px, 1.25vw, 24px);
     display: flex;
     flex-direction: column;
-    gap: clamp(0.625rem, 0.494rem + 0.2vw, 0.75rem);
+    gap: 13px;
   }
 }
 
 .p-top-fv__sidebar-sns-item {
   @media (min-width: 900px) {
-    width: clamp(1.25rem, 0.988rem + 0.41vw, 1.5rem);
+    width: 100%;
+    aspect-ratio: 1/1;
+  }
+}
+
+.p-top-fv__sidebar-sns-item svg {
+  @media (min-width: 900px) {
+    display: block;
+    width: 100%;
+    height: 100%;
   }
 }
 
@@ -294,21 +307,20 @@
 }
 
 .p-top-fv__sidebar-scrollbar {
-  padding-top: clamp(18.5rem, 15.541rem + 14.79vw, 25rem);
   display: flex;
+  height: 100%;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-end;
   gap: clamp(0.75rem, 0.409rem + 1.71vw, 1.5rem);
   @media (min-width: 900px) {
     padding-top: 0px;
-    @media (min-width: 900px) {
-      gap: clamp(0.625rem, 0.494rem + 0.2vw, 0.75rem);
-    }
+    gap: clamp(0.625rem, 0.494rem + 0.2vw, 0.75rem);
+    justify-content: center;
   }
 }
 
 .p-top-fv__sidebar-scrollbar-text {
-  font-size: clamp(0.625rem, 0.341rem + 1.42vw, 1.25rem);
   @media (min-width: 900px) {
     font-size: clamp(0.625rem, 0.363rem + 0.41vw, 0.875rem);
   }
@@ -318,14 +330,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: clamp(0.188rem, 0.017rem + 0.85vw, 0.563rem);
+  gap: 2.5vw;
+
+  @media (min-width: 900px) {
+    gap: 4px;
+  }
 }
 
 .p-top-fv__sidebar-scrollbar-border {
   background: var(--color-font-base);
   width: 1px;
-  height: clamp(3.75rem, 2.953rem + 3.98vw, 5.5rem);
+  height: 15vw;
   animation: line-extends 2s ease-in-out infinite;
+
+  @media (min-width: 900px) {
+    height: clamp(40px, 3.75vw, 60px);
+  }
 }
 
 /* 線を伸ばしてスクロールを促す */
@@ -354,10 +374,14 @@
 .p-top-fv__sidebar-scrollbar-circle {
   border-radius: 50%;
   background: var(--color-font-base);
-  width: clamp(0.188rem, 0.017rem + 0.85vw, 0.563rem);
+  width: 0.75vw;
   aspect-ratio: 1 / 1;
   opacity: 0;
   animation: circle-flashing 2s ease-in-out infinite;
+
+  @media (min-width: 900px) {
+    width: 7px;
+  }
 }
 
 /* 線を伸ばしてスクロールを促す */
@@ -381,8 +405,13 @@
 
 .p-top-fv__sidebar-sns-text,
 .p-top-fv__sidebar-scrollbar-text {
+  font-size: 2.5vw;
   font-weight: var(--font-weight-bold);
   text-transform: uppercase;
+
+  @media (min-width: 900px) {
+    font-size: clamp(10px, 0.75vw, 16px);
+  }
 }
 
 /* ----------------------------------------------------------
