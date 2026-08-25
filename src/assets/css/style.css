@@ -20,25 +20,25 @@
 .l-header-var {
   position: fixed;
   z-index: var(--z-index-header);
-  height: clamp(4.375rem, 2.651rem + 8.62vw, 7.5rem);
+  height: 18vw;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: clamp(1.25rem, 0.56rem + 3.45vw, 2.5rem);
+  padding-left: 5vw;
   @media (min-width: 900px) {
     position: static;
     height: auto;
     width: auto;
     display: inline-block;
-    padding-left: clamp(5.5rem, 3.402rem + 3.28vw, 7.5rem);
+    padding-left: clamp(90px, 7.5vw, 144px);
   }
 }
 
 .l-header-logo {
-  width: clamp(10rem, 1.034rem + 44.83vw, 26.25rem);
+  width: 41.25vw;
   @media (min-width: 900px) {
-    width: clamp(15rem, -0.738rem + 24.59vw, 30rem);
+    width: clamp(24px, 19.6875vw, 378px);
   }
 }
 
@@ -53,31 +53,26 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  width: clamp(1.875rem, 0.703rem + 5.86vw, 4rem);
+  width: 41.66666%;
   height: 1px;
   background-color: var(--color-font-sub);
 }
 
 .l-header-menu-btn span:nth-of-type(1) {
-  top: calc(35%);
-}
-
-.l-header-menu-btn span:nth-of-type(2) {
+  top: 35%;
 }
 
 .l-header-menu-btn span:nth-of-type(3) {
-  top: calc(65%);
+  top: 65%;
 }
 
 .l-header-nav {
-  padding-block: clamp(6.25rem, 3.491rem + 13.79vw, 11.25rem)
-    clamp(2.25rem, 1.284rem + 4.83vw, 4rem);
+  padding-block: 25vw 10vw;
   width: 100vw;
   height: 100vh;
   background: var(--color-sub);
   color: var(--color-font-sub);
   overflow: scroll;
-  display: none;
   @media (min-width: 900px) {
     background: transparent;
     padding-block: 0px;
@@ -89,21 +84,20 @@
 }
 
 .l-header-list {
-  margin-bottom: clamp(2.5rem, 1.672rem + 4.14vw, 4rem);
+  margin-bottom: 10vw;
   @media (min-width: 900px) {
     display: flex;
-    gap: clamp(2rem, -0.098rem + 3.28vw, 4rem);
+    gap: clamp(30px, 2.5vw, 48px);
     margin-bottom: 0px;
     align-items: center;
-    height: clamp(5.5rem, 3.402rem + 3.28vw, 7.5rem);
+    height: clamp(75px, 6.25vw, 120px);
   }
 }
 
 .l-header-link {
   width: 100%;
-  padding-block: clamp(1.25rem, 0.698rem + 2.76vw, 2.25rem);
+  padding-block: 5vw;
   border-bottom: 1px solid var(--color-font-sub);
-  font-size: clamp(0.875rem, 0.53rem + 1.72vw, 1.5rem);
   font-weight: var(--font-weight-bold);
   display: flex;
   align-items: center;
@@ -113,14 +107,27 @@
     width: auto;
     padding-inline: 0px;
     border-bottom: 0px;
-    font-size: clamp(0.75rem, 0.226rem + 0.82vw, 1.25rem);
     padding-block: 0px;
+  }
+}
+
+.l-header-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0.75vw 0 0.75vw 2.5vw;
+  border-color: transparent transparent transparent var(--color-font-sub);
+
+  @media (min-width: 900px) {
+    display: none;
   }
 }
 
 .l-header-item--contact {
   @media (min-width: 900px) {
-    width: clamp(11.25rem, 5.753rem + 8.6vw, 16.5rem);
+    width: clamp(180px, 15vw, 288px);
     height: 100%;
   }
 }
@@ -133,7 +140,7 @@
     gap: 5%;
     width: 100%;
     height: 100%;
-    font-size: clamp(0.875rem, 0.351rem + 0.82vw, 1.375rem);
+    font-size: clamp(14px, 1.125vw, 22px);
   }
 }
 
@@ -141,7 +148,7 @@
   @media (min-width: 900px) {
     content: "";
     display: block;
-    width: clamp(1rem, 0.476rem + 0.82vw, 1.5rem);
+    width: clamp(18px, 1.5vw, 29px);
     aspect-ratio: 1 / 1;
     background-image: url("../images/icon_mail.png");
     background-position: center center;
@@ -152,18 +159,18 @@
 }
 
 .l-header-nav .l-contact-cta {
-  margin-bottom: clamp(2.25rem, 1.284rem + 4.83vw, 4rem);
+  margin-bottom: 10vw;
 }
 
 .l-header-sns {
   display: flex;
-  gap: clamp(2.25rem, 1.284rem + 4.83vw, 4rem);
+  gap: 10vw;
   align-items: center;
   justify-content: center;
 }
 
 .l-header-sns-item {
-  width: clamp(1.25rem, 0.56rem + 3.45vw, 2.5rem);
+  width: 5vw;
   aspect-ratio: 1 / 1;
   text-align: center;
 }
@@ -630,22 +637,22 @@
 }
 
 .l-contact-tel {
-  margin-bottom: clamp(1.5rem, 1.224rem + 1.38vw, 2rem);
+  margin-bottom: 5vw;
   text-align: center;
 }
 
 .l-contact-tel-number {
-  font-size: clamp(1.5rem, 0.948rem + 2.76vw, 2.5rem);
+  font-size: 6vw;
   font-weight: 600;
   display: inline-flex;
   color: var(--color-primary);
   align-items: center;
-  gap: clamp(0.25rem, -0.026rem + 1.38vw, 0.75rem);
+  gap: 1.5vw;
 }
 
 .l-contact-tel-number::before {
   content: "";
-  width: clamp(1.25rem, 0.56rem + 3.45vw, 2.5rem);
+  width: 5vw;
   aspect-ratio: 1 / 1;
   background-image: url("../images/icon_tel.png");
   background-position: center center;
@@ -654,7 +661,7 @@
 }
 
 .l-contact-hours {
-  font-size: clamp(0.813rem, 0.571rem + 1.21vw, 1.25rem);
+  font-size: 3.25vw;
   color: var(--color-font-base);
 }
 
@@ -664,17 +671,17 @@
     rgb(86, 188, 213) 0%,
     rgb(19, 117, 186) 80%
   );
-  padding-block: clamp(1rem, 0.724rem + 1.38vw, 1.5rem);
-  padding-inline: clamp(0.5rem, 0.224rem + 1.38vw, 1rem);
+  padding-block: 3.75vw;
+  padding-inline: 5vw;
   display: flex;
-  gap: clamp(0.5rem, 0.224rem + 1.38vw, 1rem);
+  gap: 5vw;
   justify-content: center;
   align-items: center;
-  font-size: clamp(1.125rem, 0.918rem + 1.03vw, 1.5rem);
+  font-size: 4.5vw;
 }
 
 .l-contact-email-icon {
-  padding: clamp(0.5rem, 0.224rem + 1.38vw, 1rem);
+  padding: 2.5vw;
   background: var(--color-sub);
   border-radius: 2px;
 }
@@ -682,7 +689,7 @@
 .l-contact-email-icon::before {
   content: "";
   display: block;
-  width: clamp(1.25rem, 0.56rem + 3.45vw, 2.5rem);
+  width: 5vw;
   aspect-ratio: 1 / 1;
   background-image: url("../images/icon_mail.png");
   background-position: center center;
