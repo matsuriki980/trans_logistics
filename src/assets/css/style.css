@@ -183,6 +183,8 @@
   height: 100vh;
   display: grid;
   grid-template-columns: 90% 1fr;
+  position: relative;
+  z-index: var(--z-index-default);
   @media (min-width: 900px) {
     height: 120vh;
     grid-template-columns: 93.75% 1fr;
@@ -381,6 +383,212 @@
 .p-top-fv__sidebar-scrollbar-text {
   font-weight: var(--font-weight-bold);
   text-transform: uppercase;
+}
+
+/* ----------------------------------------------------------
+   feature 
+---------------------------------------------------------- */
+.p-top-feature {
+  margin-top: -31.25vw;
+  margin-left: 10vw;
+  padding-block: 41.25vw 30vw;
+  background-image: url(../images/feature_bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--color-font-sub);
+  position: relative;
+  z-index: 0;
+
+  @media (min-width: 900px) {
+    margin-top: -7.8125vw;
+    margin-left: 12.5vw;
+    padding-block: 14.0625vw 10.3125vw;
+  }
+}
+
+/* mask */
+.p-top-feature::before {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  top: 0;
+  content: "";
+  display: block;
+  background: #2aa4c2;
+  background: linear-gradient(
+    30deg,
+    rgba(42, 164, 194, 1) 0%,
+    rgba(19, 117, 186, 1) 80%
+  );
+  opacity: 0.6;
+}
+
+.p-top-feature__inner {
+  padding-right: 5vw;
+  position: relative;
+  z-index: var(--z-index-default);
+
+  @media (min-width: 900px) {
+    padding-right: 12.5vw;
+  }
+}
+
+.p-top-feature__title {
+  padding-left: 6vw;
+  margin-bottom: -2.5vw;
+
+  @media (min-width: 900px) {
+    padding-inline: 6.25vw;
+  }
+}
+
+.p-top-feature__block {
+  flex-direction: column;
+
+  @media (min-width: 900px) {
+    flex-direction: row;
+  }
+}
+
+.p-top-feature__imgs {
+  width: 100%;
+  aspect-ratio: 360 / 460;
+  position: relative;
+  left: -5vw;
+
+  @media (min-width: 900px) {
+    width: 51.25%;
+  }
+}
+
+.p-top-feature__img {
+  display: block;
+  position: absolute;
+}
+
+.p-top-feature__img--first {
+  width: 79.166%;
+  top: 0;
+  left: 0;
+}
+
+.p-top-feature__img--second {
+  width: 55.55%;
+  bottom: 0;
+  right: 0;
+}
+
+.p-top-feature__content {
+  padding-left: 7.3vw;
+  margin-top: -12.5vw;
+  position: relative;
+
+  @media (min-width: 900px) {
+    padding-inline: 0;
+    width: 52.08%;
+    margin-top: 0;
+  }
+}
+
+.p-top-feature__lead {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  gap: 1vw;
+  color: var(--color-primary);
+  font-size: 5.4vw;
+  margin-bottom: 12vw;
+
+  @media (min-width: 900px) {
+    gap: clamp(5px, 0.3125vw, 6px);
+    font-size: clamp(22px, 2.5vw, 48px);
+    margin-bottom: clamp(50px, 5.625vw, 108px);
+  }
+}
+
+.p-top-feature__lead span {
+  display: inline-block;
+  background: var(--color-font-sub);
+  line-height: 1.8;
+  padding-left: 2.5vw;
+
+  @media (min-width: 900px) {
+    padding-left: clamp(11px, 1.25vw, 24px);
+  }
+}
+
+.p-top-feature__text-wrapper {
+  margin-bottom: 18vw;
+  padding-inline: 2.5vw 8vw;
+
+  @media (min-width: 900px) {
+    margin-bottom: clamp(66px, 7.5vw, 144px);
+    padding-inline: clamp(50px, 5.625vw, 108px) 0;
+  }
+}
+
+.p-top-feature__text {
+  line-height: 2.125;
+
+  @media (min-width: 900px) {
+    font-size: clamp(12px, 1.0625vw, 20px);
+  }
+}
+
+.p-top-feature__text span {
+  display: block;
+}
+
+/* 一つ目と2つ目のテキスト要素 */
+.p-top-feature__text:nth-of-type(1),
+.p-top-feature__text:nth-of-type(2) {
+  margin-bottom: 12vw;
+
+  @media (min-width: 900px) {
+    margin-bottom: clamp(33px, 3.75vw, 72px);
+  }
+}
+
+.p-top-feature__btn {
+  margin-right: 5vw;
+
+  @media (min-width: 900px) {
+    margin-right: 0;
+    margin-left: auto;
+    transition: color 0.3s;
+  }
+}
+
+/* 矢印 */
+.p-top-feature__btn-arrow::before {
+  border-color: transparent transparent transparent var(--color-primary);
+  transition: border-color 0.3s;
+}
+
+/* ボタンhover時、テキストの色を変える */
+.p-top-feature__btn:hover {
+  @media (min-width: 900px) {
+    color: var(--color-primary);
+  }
+}
+
+/* ボタンhover時、矢印の色を変える */
+.p-top-feature__btn:hover .p-top-feature__btn-arrow::before {
+  @media (min-width: 900px) {
+    border-color: transparent transparent transparent var(--color-font-sub);
+  }
+}
+
+/* ボタンhover時、線が伸びる */
+.p-top-feature__btn::before {
+  border-bottom: 2px solid var(--color-font-sub);
+}
+
+.p-top-feature__btn::after {
+  @media (min-width: 900px) {
+    border-bottom: 2px solid var(--color-primary);
+  }
 }
 
 /* ----------------------------------------------------------
