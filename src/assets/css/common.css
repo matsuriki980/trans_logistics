@@ -75,6 +75,7 @@
 -------------------------------------- */
 :root {
   /* font */
+  --font-weight-medium: 500;
   --font-weight-bold: 600;
 
   /* color */
@@ -140,7 +141,7 @@ body {
   }
 }
 
-/* グラデーション背景 */
+/* ================ グラデーション背景 ================ */
 .u-bg-gradation-primary {
   background: #2aa4c2;
   background: linear-gradient(
@@ -150,12 +151,12 @@ body {
   );
 }
 
-/* テキスト 縦書き */
+/* ================ テキスト 縦書き ================ */
 .u-vertical {
   writing-mode: vertical-rl;
 }
 
-/* テキストリンク ホバーアニメーション */
+/* ================ テキストリンク ホバーアニメーション ================ */
 .u-underline {
   background-image: linear-gradient(90deg, currentcolor, currentcolor);
   background-repeat: no-repeat;
@@ -172,7 +173,7 @@ body {
   }
 }
 
-/* テキストリンク ホバーアニメーション opacity */
+/* ================ テキストリンク ホバーアニメーション opacity ================ */
 .u-link {
   transition: opacity 0.3s;
 }
@@ -183,15 +184,16 @@ body {
   }
 }
 
-/* flex */
+/* ================ flex ================ */
 .u-flex {
   display: flex;
 }
 
-/* ボタン (小) */
+/* ================ ボタン (共通) ================ */
 .c-btn {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 /* 円と矢印の装飾 */
@@ -200,7 +202,6 @@ body {
   width: 7.5vw;
   aspect-ratio: 1/1;
   border-radius: 50%;
-  background: currentColor;
   display: grid;
   place-items: center;
 
@@ -223,6 +224,7 @@ body {
   }
 }
 
+/* ================ ボタン (小) ================ */
 .c-btn--small {
   font-size: 4.5vw;
   padding-bottom: 3vw;
@@ -258,5 +260,120 @@ body {
   @media (min-width: 900px) {
     width: 100%;
     left: 0;
+  }
+}
+
+/* ================ ボタン (大) ================ */
+.c-btn--large {
+  border-radius: 30vw;
+  padding: 4vw 5vw 4vw 23.25vw;
+  background: var(--color-font-sub);
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  position: relative;
+  z-index: var(--z-index-default);
+  overflow: hidden;
+  transition: color 0.3s;
+
+  @media (min-width: 900px) {
+    border-radius: clamp(26px, 2.1875vw, 42px);
+    padding: clamp(16px, 1.625vw, 20px) clamp(34px, 2.8125vw, 54px)
+      clamp(16px, 1.625vw, 20px) clamp(105px, 8.75vw, 168px);
+  }
+}
+
+/* ボタンhover時、背景が伸びる */
+.c-btn--large:hover {
+  @media (min-width: 900px) {
+    color: var(--color-font-sub);
+  }
+}
+
+.c-btn--large::before {
+  @media (min-width: 900px) {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100%;
+    background: var(--color-primary);
+    z-index: var(--z-index-negative);
+    transition: width 0.3s;
+  }
+}
+
+.c-btn--large:hover::before {
+  @media (min-width: 900px) {
+    width: 100%;
+    left: 0;
+  }
+}
+
+.c-btn--large .c-btn__arrow {
+  transition: background 0.3s;
+}
+
+.c-btn--large:hover .c-btn__arrow {
+  @media (min-width: 900px) {
+    background: var(--color-font-sub);
+  }
+}
+
+.c-btn--large .c-btn__arrow::before {
+  transition: border-color 0.3s;
+}
+
+.c-btn--large:hover .c-btn__arrow::before {
+  @media (min-width: 900px) {
+    border-color: transparent transparent transparent var(--color-primary);
+  }
+}
+
+/* ================ セクションタイトル ================ */
+.c-title {
+  position: relative;
+}
+
+.c-title::before,
+.c-title::after {
+  content: "";
+  display: block;
+  position: absolute;
+}
+
+.c-title::before {
+  width: 1px;
+}
+
+.c-title::after {
+  width: 3.75vw;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  opacity: 0.2;
+
+  @media (min-width: 900px) {
+    width: clamp(14px, 1.1875vw, 23px);
+  }
+}
+
+.c-title-en {
+  font-size: 12vw;
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  @media (min-width: 900px) {
+    font-size: clamp(75px, 6.25vw, 120px);
+  }
+}
+
+.c-title-ja {
+  font-size: 4vw;
+  font-weight: var(--font-weight-bold);
+
+  @media (min-width: 900px) {
+    font-size: clamp(15px, 1.25vw, 24px);
   }
 }
