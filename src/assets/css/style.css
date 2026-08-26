@@ -650,7 +650,6 @@
 /* ----------------------------------------------------------
    service 
 ---------------------------------------------------------- */
-
 .p-top-service__title {
   padding-top: 25vw;
   margin-bottom: 16vw;
@@ -696,8 +695,10 @@
   flex-direction: column;
   gap: 20vw;
   position: relative;
+  padding-bottom: 30vw;
 
   @media (min-width: 900px) {
+    padding-bottom: clamp(150px, 50vw, 240px);
     gap: clamp(142px, 11.875vw, 228px);
   }
 }
@@ -710,6 +711,14 @@
   position: absolute;
   z-index: var(--z-index-negative);
   inset: 0;
+
+  @media (min-width: 900px) {
+    inset: auto;
+    width: calc(100% - max(390px, 32.5vw));
+    height: 75%;
+    bottom: clamp(150px, 50vw, 240px);
+    right: 0;
+  }
 }
 
 .p-top-service__item {
@@ -799,9 +808,6 @@
   @media (min-width: 900px) {
     margin-bottom: clamp(48px, 4.5vw, 72px);
   }
-}
-
-.p-top-service__btn {
 }
 
 .p-top-service__btn-arrow {
