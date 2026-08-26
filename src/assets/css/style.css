@@ -212,6 +212,21 @@
   }
 }
 
+/* 透過背景 */
+.p-top-fv__content::before {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  background: #437d95;
+  background: linear-gradient(
+    90deg,
+    rgba(67, 125, 149, 1) 0%,
+    rgba(8, 22, 57, 1) 100%
+  );
+  opacity: 0.3;
+}
+
 .p-top-fv__copy-wrapper {
   width: 54vw;
   position: absolute;
