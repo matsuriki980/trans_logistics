@@ -823,6 +823,11 @@
 .p-top-works {
   position: relative;
   color: var(--color-font-sub);
+  padding-bottom: 30vw;
+
+  @media (min-width: 900px) {
+   padding-bottom: clamp(97.5px, 32.5vw, 156px);
+  }
 }
 
 /* 背景色 */
