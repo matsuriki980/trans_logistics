@@ -234,6 +234,7 @@ body {
     font-size: clamp(15px, 1.25vw, 24px);
     width: clamp(165px, 18.75vw, 360px);
     padding-bottom: clamp(11px, 1.25vw, 24px);
+    transition: color 0.3s;
   }
 }
 
