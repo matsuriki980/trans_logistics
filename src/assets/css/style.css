@@ -1488,39 +1488,132 @@
 /* ----------------------------------------------------------
    contact 
 ---------------------------------------------------------- */
+.l-contact {
+  padding-block: 20vw;
+  background-image: url(../images/contact.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  color: var(--color-font-sub);
+
+  @media (min-width: 900px) {
+    padding-block: clamp(90px, 7.5vw, 144px);
+  }
+}
+
+.l-contact::before {
+  content: "";
+  display: block;
+
+  position: absolute;
+  inset: 0;
+  background: #437d95;
+  background: linear-gradient(
+    90deg,
+    rgba(67, 125, 149, 0.2) 0%,
+    rgba(8, 22, 57, 0.2) 100%
+  );
+}
+
+.l-contact__inner {
+  padding-inline: 5vw;
+  position: relative;
+
+  @media (min-width: 900px) {
+    padding-inline: max(150px, 12.5vw);
+    max-width: 2000px;
+    margin: 0 auto;
+  }
+}
+
+.l-contact__title {
+  padding-inline: 2.5vw;
+
+  @media (min-width: 900px) {
+    padding-inline: max(150px, 12.5vw);
+  }
+}
+
+.l-contact__lead {
+  text-align: center;
+  font-size: 4.5vw;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.1em;
+  line-height: 1.67;
+  margin-block: -4.5vw 32.5vw;
+
+  @media (min-width: 900px) {
+    font-size: clamp(22.5px, 1.875vw, 36px);
+    margin-block: clamp(-144px, -7.5vw, -90px) clamp(90px, 7.5vw, 144px);
+  }
+}
+
+.l-contact__lead span {
+  display: block;
+}
+
 .l-contact-cta {
   background: var(--color-font-sub);
   display: grid;
   grid-template-columns: 1fr;
+  padding: 10vw 5vw 5vw;
+
+  @media (min-width: 900px) {
+    padding: clamp(18px, 1.5vw, 29px);
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
 }
 
 .l-contact-tel {
   margin-bottom: 5vw;
   text-align: center;
+  line-height: 1;
+
+  @media (min-width: 900px) {
+    margin-bottom: 0;
+  }
 }
 
 .l-contact-tel-number {
-  font-size: 6vw;
+  font-size: 7.5vw;
   font-weight: 600;
   display: inline-flex;
   color: var(--color-primary);
   align-items: center;
   gap: 1.5vw;
+  margin-bottom: 3vw;
+
+  @media (min-width: 900px) {
+    font-size: clamp(27px, 2.25vw, 43px);
+    margin-bottom: clamp(15px, 1.25vw, 24px);
+    gap: clamp(12px, 0.75vw, 14px);
+    letter-spacing: 0.05em;
+  }
 }
 
 .l-contact-tel-number::before {
   content: "";
-  width: 5vw;
+  width: 6vw;
   aspect-ratio: 1 / 1;
   background-image: url("../images/icon_tel.png");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;
+
+  @media (min-width: 900px) {
+    width: clamp(24px, 2vw, 38px);
+  }
 }
 
 .l-contact-hours {
   font-size: 3.25vw;
   color: var(--color-font-base);
+
+  @media (min-width: 900px) {
+    font-size: clamp(12px, 0.8125vw, 16px);
+  }
 }
 
 .l-contact-email {
@@ -1536,12 +1629,23 @@
   justify-content: center;
   align-items: center;
   font-size: 4.5vw;
+
+  @media (min-width: 900px) {
+    font-size: clamp(16px, 1.375vw, 26px);
+    padding-block: clamp(30px, 2.5vw, 48px);
+    padding-inline: 0;
+    gap: clamp(22.5px, 1.875vw, 36px);
+  }
 }
 
 .l-contact-email-icon {
   padding: 2.5vw;
   background: var(--color-sub);
   border-radius: 2px;
+
+  @media (min-width: 900px) {
+    padding: clamp(12px, 1vw, 19px);
+  }
 }
 
 .l-contact-email-icon::before {
@@ -1553,4 +1657,8 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;
+
+  @media (min-width: 900px) {
+    width: clamp(15px, 1.25vw, 24px);
+  }
 }
