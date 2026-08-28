@@ -1477,7 +1477,7 @@
   margin-left: auto;
 
   @media (min-width: 900px) {
-    width: 20.45%;
+    width: max(160px, 20.45%);
     font-size: clamp(14px, 0.875vw, 17px);
   }
 }
