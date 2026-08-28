@@ -1251,9 +1251,9 @@
   @media (min-width: 900px) {
     padding: clamp(120px, 10vw, 192px) clamp(150px, 12.5vw, 240px)
       clamp(75px, 6.25vw, 120px) clamp(90px, 7.5vw, 144px);
-    margin: clamp(-120px, -6.255vw, -75px) auto 0 clamp(300px, 25vw, 480px);
+    margin: clamp(-120px, -6.255vw, -75px) auto 0 clamp(220px, 25vw, 480px);
     display: grid;
-    grid-template-columns: clamp(300px, 25vw, 480px) clamp(
+    grid-template-columns: clamp(220px, 25vw, 480px) clamp(
         165px,
         18.75vw,
         360px
