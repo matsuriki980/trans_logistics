@@ -100,8 +100,13 @@ body {
   font-family: "Noto Sans JP", sans-serif;
 
   @media (min-width: 900px) {
-    font-size: clamp(12px, 1vw, 19px);
+    font-size: clamp(10px, 1vw, 19px);
   }
+}
+
+/* スクロール無効化 */
+.u-scroll-hidden {
+  overflow: hidden;
 }
 
 .u-font-en {
