@@ -491,3 +491,26 @@ body {
     transform: translateX(0);
   }
 }
+
+/* 下側からフェードイン */
+.u-fade-in-item--bottom {
+  opacity: 0;
+  transform: translateY(120%);
+}
+
+.u-fade-in-item--bottom.is-scroll-active {
+  animation-name: fade-in-bottom;
+  animation-duration: var(--animation-duration);
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-in-bottom {
+  0% {
+    opacity: 0;
+    transform: translateY(120%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
