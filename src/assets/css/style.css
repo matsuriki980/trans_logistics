@@ -817,6 +817,8 @@
 }
 
 .p-top-service__item {
+  overflow: hidden;
+
   @media (min-width: 900px) {
     position: relative;
   }
