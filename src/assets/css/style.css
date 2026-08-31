@@ -1231,6 +1231,26 @@
   }
 }
 
+.p-top-company__content-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+/* pc 背景色 */
+.p-top-company__content-wrapper::before {
+  @media (min-width: 900px) {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: var(--z-index-negative);
+    background: #f3f5f6;
+    top: 0;
+    left: 0;
+  }
+}
+
 .p-top-company__content {
   position: relative;
 }
@@ -1250,31 +1270,39 @@
   color: var(--color-primary);
 }
 
-.p-top-works__lead {
+.p-top-company__lead-wrapper {
+  position: absolute;
+  top: 17.5vw;
+  left: 0;
+
+  @media (min-width: 900px) {
+    top: clamp(142px, 11.875vw, 228px);
+    left: auto;
+    right: clamp(150px, 12.5vw, 240px);
+  }
+}
+
+.p-top-company__lead {
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
   font-size: 5vw;
   gap: 1vw;
-  position: absolute;
-  top: 17.5vw;
-  left: 0;
+
   color: var(--color-sub);
 
   @media (min-width: 900px) {
     font-size: clamp(27px, 2.25vw, 43px);
-    top: clamp(142px, 11.875vw, 228px);
-    left: auto;
-    right: clamp(150px, 12.5vw, 240px);
     gap: 12px;
   }
 }
 
-.p-top-works__lead span {
+.p-top-company__lead span {
   display: inline-block;
-  background: var(--color-font-sub);
   padding-inline: 5vw 3.5vw;
   line-height: 2;
+  position: relative;
+  z-index: var(--z-index-default);
 
   @media (min-width: 900px) {
     padding-inline: clamp(15px, 1.25vw, 24px);
@@ -1282,7 +1310,7 @@
 }
 
 /* 改行箇所が異なるので個別の要素を指定し、表示・非表示 */
-.p-top-works__lead span.u-sp-hidden {
+.p-top-company__lead span.u-sp-hidden {
   display: none;
 
   @media (min-width: 900px) {
@@ -1290,7 +1318,7 @@
   }
 }
 
-.p-top-works__lead span.u-pc-hidden {
+.p-top-company__lead span.u-pc-hidden {
   display: inline-block;
 
   @media (min-width: 900px) {
@@ -1299,10 +1327,10 @@
 }
 
 .p-top-company__text-area {
-  background: var(--color-font-sub);
   padding: 30vw 10vw 22vw;
   margin-top: -15vw;
   margin-right: 10vw;
+  background: var(--color-font-sub);
   position: relative;
 
   @media (min-width: 900px) {
@@ -1317,21 +1345,6 @@
       );
     justify-content: space-between;
     align-items: center;
-  }
-}
-
-/* pc 背景色 */
-.p-top-company__text-area::after {
-  @media (min-width: 900px) {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: var(--z-index-negative);
-    background: #f3f5f6;
-    top: 0;
-    left: clamp(-480px, -25vw, -300px);
   }
 }
 
@@ -1412,6 +1425,54 @@
 .p-top-company__btn::after {
   @media (min-width: 900px) {
     border-bottom: 2px solid var(--color-font-base);
+  }
+}
+
+/* ----------------------------------------------------------
+   companyセクション フェードインアニメーション
+---------------------------------------------------------- */
+
+/* 900px以下は左からフェードイン */
+.p-top-company__content.u-fade-in-item--right.is-scroll-active {
+  @media (max-width: 899px) {
+    animation-name: fade-in-company;
+    animation-duration: var(--animation-duration);
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes fade-in-company {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* リード文 左から背景色を伸ばす */
+.p-top-company__lead span::before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 100%;
+  background: var(--color-font-sub);
+  position: absolute;
+  z-index: var(--z-index-negative);
+  left: 0;
+}
+.p-top-company__lead.is-scroll-active span::before {
+  animation-name: bg-extend;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes bg-extend {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
   }
 }
 

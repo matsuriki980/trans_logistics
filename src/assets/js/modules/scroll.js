@@ -32,8 +32,7 @@ export const initScroll = () => {
   // オプション設定
   const option = {
     root: null,
-    rootMargin: "0px",
-    threshold: 0.5,
+    rootMargin: "-50% 0px",
   };
 
   // インスタンス生成
