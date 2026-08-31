@@ -441,3 +441,8 @@ body {
 .c-page-top-btn.is-active {
   transform: translateY(0);
 }
+
+/* overflow */
+.u-overflow-hidden {
+  overflow: hidden;
+}

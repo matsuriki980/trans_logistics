@@ -592,6 +592,8 @@
   color: var(--color-primary);
   font-size: 5.4vw;
   margin-bottom: 12vw;
+  position: relative;
+  z-index: var(--z-index-default);
 
   @media (min-width: 900px) {
     gap: clamp(5px, 0.3125vw, 6px);
@@ -602,9 +604,9 @@
 
 .p-top-feature__lead span {
   display: inline-block;
-  background: var(--color-font-sub);
   line-height: 1.8;
   padding-left: 2.5vw;
+  position: relative;
 
   @media (min-width: 900px) {
     padding-left: clamp(11px, 1.25vw, 24px);
@@ -636,10 +638,10 @@
 /* 一つ目と2つ目のテキスト要素 */
 .p-top-feature__text:nth-of-type(1),
 .p-top-feature__text:nth-of-type(2) {
-  margin-bottom: 12vw;
+  padding-bottom: 12vw;
 
   @media (min-width: 900px) {
-    margin-bottom: clamp(33px, 3.75vw, 72px);
+    padding-bottom: clamp(33px, 3.75vw, 72px);
   }
 }
 
@@ -649,6 +651,59 @@
   @media (min-width: 900px) {
     margin-right: 0;
     margin-left: auto;
+  }
+}
+
+/* ----------------------------------------------------------
+   featureセクション スクロールフェードインアニメーション 
+---------------------------------------------------------- */
+
+/* リード文 右から背景色を伸ばす */
+.p-top-feature__lead span::before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 100%;
+  background: var(--color-font-sub);
+  position: absolute;
+  z-index: var(--z-index-negative);
+  right: 0;
+}
+.p-top-feature__lead.is-scroll-active span::before {
+  animation-name: bg-extend;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes bg-extend {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* テキスト 下からフェードイン */
+.p-top-feature__text {
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+.p-top-feature__text.is-scroll-active {
+  animation-name: text-fadeIn;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes text-fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
