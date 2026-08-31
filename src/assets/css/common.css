@@ -93,6 +93,9 @@
   --z-index-header: 30;
   --z-index-default: 1;
   --z-index-negative: -1;
+
+  /* animation */
+  --animation-duration: 0.8s;
 }
 
 body {
@@ -445,4 +448,46 @@ body {
 /* overflow */
 .u-overflow-hidden {
   overflow: hidden;
+}
+
+/* ================ アニメーション設定 ================ */
+
+/* 左側からフェードイン */
+.u-fade-in-item--left {
+  transform: translateX(-120%);
+}
+
+.u-fade-in-item--left.is-scroll-active {
+  animation-name: fade-in-left;
+  animation-duration: var(--animation-duration);
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-in-left {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* 右側からフェードイン */
+.u-fade-in-item--right {
+  transform: translateX(120%);
+}
+
+.u-fade-in-item--right.is-scroll-active {
+  animation-name: fade-in-right;
+  animation-duration: var(--animation-duration);
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-in-right {
+  0% {
+    transform: translateX(120%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
