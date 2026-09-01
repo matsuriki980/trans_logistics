@@ -7,6 +7,12 @@
 ### 提供元
 [AmotDesign様](https://coconala.com/services/3024603?ref=talkroom)
 
+### 制作期間
+11日（1日約2時間）　
+
+### 担当範囲
+- コーディング
+
 ## URL
 [https://matsuyamarikiya.jp/trans_logistics/src/](https://matsuyamarikiya.jp/trans_logistics/src/)
 
