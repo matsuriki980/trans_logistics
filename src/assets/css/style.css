@@ -92,7 +92,7 @@
 .l-header-nav {
   padding-block: 25vw 10vw;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   background: var(--color-sub);
   color: var(--color-font-sub);
   overflow: scroll;
