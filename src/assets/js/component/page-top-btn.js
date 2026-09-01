@@ -2,51 +2,39 @@
  ページトップボタン
 */
 export const initPageTopBtn = () => {
+  const pageTopBtn = document.querySelector(".js-page-top-btn");
+  const pageTopBtnTrigger = document.querySelector(".js-page-top-btn-trigger");
+
   // 900px以上の時のみ実行する
   const pageTopBtnProcess = () => {
-    if (window.innerWidth >= 899) {
-      const pageTopBtn = document.querySelector(".js-page-top-btn");
-
-      if (!pageTopBtn) return;
-
-      // クラス付与の処理を書く
-      const pageTopBtnToggleClass = (entries) => {
+    const pageTopBtnToggle = (entries) => {
+      if (window.innerWidth >= 899) {
         entries.forEach((entry) => {
-          // 要素が交差したら…
-          if (entry.isIntersecting) {
-            // クラスをつける
-            pageTopBtn.classList.remove("is-active");
-          } else {
-            // クラスを外す
+          if (!entry.isIntersecting) {
             pageTopBtn.classList.add("is-active");
+          } else {
+            pageTopBtn.classList.remove("is-active");
           }
         });
-      };
+      }
+    };
+    // オプション設定
+    const option = {
+      root: null,
+    };
 
-      // オプション設定
-      const option = {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.1,
-      };
+    // インスタンス生成
+    const observer = new IntersectionObserver(pageTopBtnToggle, option);
 
-      // インスタンス生成
-      const observer = new IntersectionObserver(pageTopBtnToggleClass, option);
-
-      // 監視対象にしたい要素を渡す
-      document.querySelectorAll(".js-fade-in-trigger").forEach((el) => {
-        observer.observe(el);
-      });
-
-      //  ボタンクリックでページトップに移動
-      pageTopBtn.addEventListener("click", () => {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
-      });
-    }
+    observer.observe(pageTopBtnTrigger);
   };
+
+  pageTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
 
   // リサイズ時の処理
   window.addEventListener("resize", pageTopBtnProcess);
