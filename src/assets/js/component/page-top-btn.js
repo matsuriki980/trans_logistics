@@ -5,6 +5,8 @@ export const initPageTopBtn = () => {
   const pageTopBtn = document.querySelector(".js-page-top-btn");
   const pageTopBtnTrigger = document.querySelector(".js-page-top-btn-trigger");
 
+  if (!pageTopBtn || !pageTopBtnTrigger) return;
+
   // 900px以上の時のみ実行する
   const pageTopBtnProcess = () => {
     const pageTopBtnToggle = (entries) => {
